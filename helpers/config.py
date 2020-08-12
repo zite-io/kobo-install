@@ -1323,6 +1323,9 @@ class Config:
         self.__config["ee_subdomain"] = CLI.colored_input("Enketo Express sub domain name",
                                                           CLI.COLOR_SUCCESS,
                                                           self.__config.get("ee_subdomain", ""))
+        self.__config["zite_subdomain"] = CLI.colored_input("Zite sub domain name",
+                                                          CLI.COLOR_SUCCESS,
+                                                          self.__config.get("zite_subdomain", ""))
 
         parts = self.__config.get("public_domain_name", "").split(".")
         self.__config["internal_domain_name"] = "{}.internal".format(
