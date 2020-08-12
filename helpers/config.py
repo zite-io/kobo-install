@@ -282,6 +282,7 @@ class Config:
             "kpi_subdomain": "kf",
             "kc_subdomain": "kc",
             "ee_subdomain": "ee",
+            "zite_subdomain": "zite",
             "kc_postgres_db": "kobocat",
             "kpi_postgres_db": "koboform",
             "postgres_user": "kobo",
