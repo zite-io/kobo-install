@@ -157,6 +157,7 @@ class Template:
             "KOBOFORM_SUBDOMAIN": config.get("kpi_subdomain", ""),
             "KOBOCAT_SUBDOMAIN": config.get("kc_subdomain", ""),
             "ENKETO_SUBDOMAIN": config.get("ee_subdomain", ""),
+            "ZITE_SUBDOMAIN": config.get("zite_subdomain", ""),
             "KOBO_SUPERUSER_USERNAME": config.get("super_user_username", ""),
             "KOBO_SUPERUSER_PASSWORD": config.get("super_user_password", ""),
             "ENKETO_API_KEY": config.get("enketo_api_token"),
@@ -288,6 +289,7 @@ class Template:
             with open(os.path.join(root_, filename), "r") as template:
                 t = ExtendedPyTemplate(template.read(), template_variables_)
                 with open(os.path.join(destination_directory_, filename[:-4]), "w") as f:
+                    print(template_variables_)
                     f.write(t.substitute(template_variables_))
 
     @classmethod
