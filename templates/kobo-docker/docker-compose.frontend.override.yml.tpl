@@ -62,7 +62,6 @@ services:
 
   zite:
     command: "uwsgi --ini uwsgi.ini"
-    environment:
     ${USE_EXTRA_HOSTS}extra_hosts:
       ${USE_FAKE_DNS}- ${KOBOFORM_SUBDOMAIN}.${PUBLIC_DOMAIN_NAME}:${LOCAL_INTERFACE_IP}
       ${USE_FAKE_DNS}- ${KOBOCAT_SUBDOMAIN}.${PUBLIC_DOMAIN_NAME}:${LOCAL_INTERFACE_IP}
@@ -80,7 +79,6 @@ services:
 
   zite_worker:
     command: "celery -A zite worker -l INFO -Q default,manage_forms,submission"
-    environment:
     ${USE_EXTRA_HOSTS}extra_hosts:
       ${USE_FAKE_DNS}- ${KOBOFORM_SUBDOMAIN}.${PUBLIC_DOMAIN_NAME}:${LOCAL_INTERFACE_IP}
       ${USE_FAKE_DNS}- ${KOBOCAT_SUBDOMAIN}.${PUBLIC_DOMAIN_NAME}:${LOCAL_INTERFACE_IP}
@@ -99,7 +97,6 @@ services:
 
   zite_beat:
     command: "celery -A zite beat"
-    environment:
     ${USE_EXTRA_HOSTS}extra_hosts:
       ${USE_FAKE_DNS}- ${KOBOFORM_SUBDOMAIN}.${PUBLIC_DOMAIN_NAME}:${LOCAL_INTERFACE_IP}
       ${USE_FAKE_DNS}- ${KOBOCAT_SUBDOMAIN}.${PUBLIC_DOMAIN_NAME}:${LOCAL_INTERFACE_IP}
