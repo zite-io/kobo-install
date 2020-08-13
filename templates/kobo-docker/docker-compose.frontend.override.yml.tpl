@@ -133,6 +133,7 @@ services:
           - ${KOBOFORM_SUBDOMAIN}.${INTERNAL_DOMAIN_NAME}
           - ${KOBOCAT_SUBDOMAIN}.${INTERNAL_DOMAIN_NAME}
           - ${ENKETO_SUBDOMAIN}.${INTERNAL_DOMAIN_NAME}
+          - ${ZITE_SUBDOMAIN}.${INTERNAL_DOMAIN_NAME}
 
   enketo_express:
     # `DUMMY_ENV` is only there to avoid extra complex condition to override
